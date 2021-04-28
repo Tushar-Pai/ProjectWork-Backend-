@@ -14,12 +14,12 @@ app.set('views', path.join(__dirname, 'views')); //Setting pug directory to view
 
 
 //ENDPOINTS OF REGISTRATION PAGE
-app.get("/", (req, res) => {
-  res.status(200).render('form.pug')
+app.get("/registration", (req, res) => {
+  res.status(200).render('registration.pug');
 })
 
 //POST REQUEST OF REGESTRATION PAGE
-app.post("/", (req, res) => {
+app.post("/registration", (req, res) => {
 
   //Storing the values of the form in variables 
   let Email = req.body.Email;
@@ -59,14 +59,14 @@ app.post("/", (req, res) => {
 
   res.status(200).redirect('/login');
 
-})
+});
 
 
 
 //ENDPOINTS OF LOGIN PAGE
 app.get("/login", (req, res) => {
-  res.status(200).render('login.pug')
-})
+  res.status(200).render('login.pug');
+});
 
 
 
@@ -95,8 +95,8 @@ app.post("/login", (req, res) => {
       process.on('uncaughtException', err => {
         const mes = { 'message': 'Email id not registered ' };
         res.status(200).render('failedlogin.pug', mes);
-        process.exit(1); //mandatory (as per the Node.js docs)
-      })
+        process.exit(1); 
+      });
 
       var json = JSON.parse(JSON.stringify(result)); //Converting RowDataPacket object to a normal object
 
@@ -118,7 +118,7 @@ app.post("/login", (req, res) => {
 
     });
   });
-})
+});
 
 
 
@@ -126,4 +126,4 @@ app.post("/login", (req, res) => {
 //Starting the server
 app.listen(port, () => {
   console.log(`This website is running on ${port} port`);
-})
+});
