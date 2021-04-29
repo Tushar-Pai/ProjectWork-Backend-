@@ -9,4 +9,3 @@ If the below specified tasks are finished, then you can continue to work on the 
 TASKS TO BE DONE
 => Complete the course of nodejs and git.
 
-TEST FOLDER => This folder is created just to test our website.
